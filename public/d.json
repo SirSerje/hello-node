@@ -1,0 +1,104 @@
+[
+    {
+        "timestamp": 1531132987000,
+        "hostname": "10.22.22.178",
+        "sourceAddress": "C7200.TESTTASK.COM_10.22.22.178",
+        "destinationAddress": "Cisco3745new-1.TESTTASK.COM_10.22.22.120",
+        "totalBytesIn": 600240,
+        "totalBytesOut": 0,
+        "totalPacketsIn": 3003,
+        "totalPacketsOut": 0,
+        "applicationBreakdown": [
+            {
+                "portNumber": 1967,
+                "applicationName": "SNS Quote",
+                "protocol": 17,
+                "bytesIn": 240,
+                "bytesOut": 0,
+                "packetsIn": 3,
+                "packetsOut": 0
+            },
+            {
+                "portNumber": 16384,
+                "applicationName": "Connected Corp",
+                "protocol": 17,
+                "bytesIn": 600000,
+                "bytesOut": 0,
+                "packetsIn": 3000,
+                "packetsOut": 0
+            }
+        ]
+    },
+    {
+        "timestamp": 1531132998000,
+        "hostname": "10.22.22.178",
+        "sourceAddress": "MikroTik_10.22.22.109",
+        "destinationAddress": "255.255.255.255",
+        "totalBytesIn": 0,
+        "totalBytesOut": 119,
+        "totalPacketsIn": 0,
+        "totalPacketsOut": 1,
+        "applicationBreakdown": [
+            {
+                "portNumber": 5678,
+                "applicationName": "Remote Replication Agent Connection",
+                "protocol": 17,
+                "bytesIn": 0,
+                "bytesOut": 119,
+                "packetsIn": 0,
+                "packetsOut": 1
+            }
+        ]
+    },
+    {
+        "timestamp": 1531133010000,
+        "hostname": "10.22.22.178",
+        "sourceAddress": "239.255.255.250",
+        "destinationAddress": "10.22.22.155",
+        "totalBytesIn": 1233,
+        "totalBytesOut": 0,
+        "totalPacketsIn": 4,
+        "totalPacketsOut": 0,
+        "applicationBreakdown": [
+            {
+                "portNumber": 1900,
+                "applicationName": "SSDP",
+                "protocol": 17,
+                "bytesIn": 1233,
+                "bytesOut": 0,
+                "packetsIn": 4,
+                "packetsOut": 0
+            }
+        ]
+    },
+    {
+        "timestamp": 1531133022000,
+        "hostname": "10.22.22.178",
+        "sourceAddress": "C7200.TESTTASK.COM_10.22.22.178",
+        "destinationAddress": "Cisco3640new-2.TESTTASK.COM_10.22.22.129",
+        "totalBytesIn": 800240,
+        "totalBytesOut": 0,
+        "totalPacketsIn": 4003,
+        "totalPacketsOut": 0,
+        "applicationBreakdown": [
+            {
+                "portNumber": 1967,
+                "applicationName": "SNS Quote",
+                "protocol": 17,
+                "bytesIn": 240,
+                "bytesOut": 0,
+                "packetsIn": 3,
+                "packetsOut": 0
+            },
+            {
+                "portNumber": 16384,
+                "applicationName": "Connected Corp",
+                "protocol": 17,
+                "bytesIn": 800000,
+                "bytesOut": 0,
+                "packetsIn": 4000,
+                "packetsOut": 0
+            }
+        ]
+    }
+]
