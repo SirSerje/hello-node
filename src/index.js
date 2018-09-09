@@ -1,44 +1,42 @@
-const fs = require('fs')
-const url = require('url')
-const express = require('express')
-const queryString = require('querystring')
-const app = express()
-const PORT = 3567
+const fs = require('fs');
+const url = require('url');
+const express = require('express');
+const queryString = require('querystring');
+const app = express();
+const PORT = 3567;
 
 //define global store variable
-let globalData
-init()
+let globalData;
+init();
 
 app.get('/api/*', (req, res) => {
-  let temp = globalData
-  let url_parts = url.parse(req.url)
-  let requestSettings = queryString.parse(url_parts.query)
+  let temp = globalData;
+  let url_parts = url.parse(req.url);
+  let requestSettings = queryString.parse(url_parts.query);
 
-  getNewsPerPage(requestSettings)
-  res.send(temp)
+  let pages = getNewsPerPage(requestSettings);
+
+
+if(pages === undefined) res.sendStatus(404);
+  res.send(temp.slice(pages.from, pages.to))
   // res.sendStatus(200)
-})
+});
 
-app.listen(PORT, () => console.log(`example on ${PORT}`))
+app.listen(PORT, () => console.log(`example on ${PORT}`));
 
 function init() {
   globalData = JSON.parse(fs.readFileSync('./public/d.json', 'utf8'));
 }
 
 function getNewsPerPage(props) {
-  let {size, page} = props
-  size = Number(size)
-  page = Number(page)
-  let length = globalData.length
-  let to = size * page - 1
-  let from = to - size + 1
+  let {size, page} = props;
+  size = Number(size);
+  page = Number(page);
+  let length = globalData.length;
+  let to = size * page;
+  let from = to - size;
 
-  for (let i = from; i <= to; i++) {
-    if (i > length) {
-      console.log('OVER')
-      break
-    } else {
-      console.log('element:', i)
-    }
-  }
+  if(to > length) return undefined;
+  return {from, to}
+
 }
