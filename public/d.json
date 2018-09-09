@@ -11,21 +11,11 @@
         "applicationBreakdown": [
             {
                 "portNumber": 1967,
-                "applicationName": "SNS Quote",
-                "protocol": 17,
-                "bytesIn": 240,
-                "bytesOut": 0,
-                "packetsIn": 3,
-                "packetsOut": 0
+                "applicationName": "SNS Quote"
             },
             {
-                "portNumber": 16384,
-                "applicationName": "Connected Corp",
-                "protocol": 17,
-                "bytesIn": 600000,
-                "bytesOut": 0,
-                "packetsIn": 3000,
-                "packetsOut": 0
+                "portNumber": 15200,
+                "applicationName": "Connected Corp"
             }
         ]
     },
@@ -41,12 +31,7 @@
         "applicationBreakdown": [
             {
                 "portNumber": 5678,
-                "applicationName": "Remote Replication Agent Connection",
-                "protocol": 17,
-                "bytesIn": 0,
-                "bytesOut": 119,
-                "packetsIn": 0,
-                "packetsOut": 1
+                "applicationName": "Remote Replication Agent Connection"
             }
         ]
     },
@@ -62,12 +47,7 @@
         "applicationBreakdown": [
             {
                 "portNumber": 1900,
-                "applicationName": "SSDP",
-                "protocol": 17,
-                "bytesIn": 1233,
-                "bytesOut": 0,
-                "packetsIn": 4,
-                "packetsOut": 0
+                "applicationName": "SSDP"
             }
         ]
     },
@@ -82,22 +62,12 @@
         "totalPacketsOut": 0,
         "applicationBreakdown": [
             {
-                "portNumber": 1967,
-                "applicationName": "SNS Quote",
-                "protocol": 17,
-                "bytesIn": 240,
-                "bytesOut": 0,
-                "packetsIn": 3,
-                "packetsOut": 0
+                "portNumber": 1930,
+                "applicationName": "SNS Quote"
             },
             {
                 "portNumber": 16384,
-                "applicationName": "Connected Corp",
-                "protocol": 17,
-                "bytesIn": 800000,
-                "bytesOut": 0,
-                "packetsIn": 4000,
-                "packetsOut": 0
+                "applicationName": "Connected Corp"
             }
         ]
     }

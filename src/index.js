@@ -12,20 +12,45 @@ init(); //add data to global store
 
 app.get('/items/*', (req, res) => {
   //TODO: https://github.com/SirSerje/hello-node/issues/2
-  let temp = globalData;
   let url_parts = url.parse(req.url);
   let requestSettings = queryString.parse(url_parts.query);
-
   let pages = getNewsPerPage(requestSettings);
-
   if (pages === undefined) res.sendStatus(404);
-  res.send(temp.slice(pages.from, pages.to))
+
+  res.send(prepareItems(pages))
   // res.sendStatus(200)
 });
 
+//article=XXXXXX
 app.get('/item/*', (req, res) => {
+  let url_parts = url.parse(req.url);
+  let requestSettings = queryString.parse(url_parts.query);
   //TODO: implementation needed
+  res.send(getItemById(requestSettings.article, globalData)[0].applicationBreakdown)
 });
+
+const getItemById = (val, object) => object.filter(i => {
+  if (Number(i.timestamp) === Number(val)) {
+    return i
+  }
+});
+
+function prepareItems(props) {
+  //TODO add default parameter if not set to page 1 && size 10
+  let {from, to} = props;
+  let result = [];
+  for (let i = from; i < to; i++) {
+    let current = globalData[i];
+    let temp = {};
+    //TODO: add hasOwnProperty check
+    temp.timestamp = current.timestamp;
+    temp.hostname = current.hostname;
+    temp.sourceAddress = current.sourceAddress;
+    result.push(temp)
+  }
+  return result
+}
+
 
 app.listen(PORT, () => console.log(`example on ${PORT}`));
 
